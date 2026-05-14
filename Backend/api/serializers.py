@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Event
+from .models import Stall, MenuItem
 
 class EventSerializer(serializers.ModelSerializer):
     # 1. Map Django's snake_case to React's camelCase
@@ -27,3 +28,39 @@ class EventSerializer(serializers.ModelSerializer):
         # so your React frontend doesn't crash when it tries to map over it.
         # (Consider adding a JSONField or ManyToMany tag model later!)
         return ["Live Event", "Food"]
+    
+
+class MenuItemSerializer(serializers.ModelSerializer):
+    # Map Django fields to React camelCase
+    stallId = serializers.PrimaryKeyRelatedField(source='stall', read_only=True)
+    isAvailable = serializers.BooleanField(source='is_available', required=False)
+    prepTime = serializers.IntegerField(source='prep_time', required=False)
+
+    class Meta:
+        model = MenuItem
+        fields = ['id', 'stallId', 'name', 'description', 'price', 'image', 'category', 'isAvailable', 'prepTime']
+
+class StallSerializer(serializers.ModelSerializer):
+    # Relational mapping
+    eventId = serializers.PrimaryKeyRelatedField(source='event', read_only=True)
+    vendorId = serializers.PrimaryKeyRelatedField(source='vendor', read_only=True)
+    
+    # CamelCase mapping
+    reviewCount = serializers.IntegerField(source='review_count', required=False)
+    waitTime = serializers.CharField(source='wait_time', required=False)
+    isOpen = serializers.BooleanField(source='is_open', required=False)
+    location = serializers.CharField(source='location_code', required=False)
+    
+    # Fallback for the tags array
+    tags = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Stall
+        fields = [
+            'id', 'eventId', 'vendorId', 'name', 'description', 'image', 'banner', 
+            'category', 'rating', 'reviewCount', 'waitTime', 'status', 'isOpen', 
+            'tags', 'location'
+        ]
+
+    def get_tags(self, obj):
+        return ["Popular", "Fresh"] # Fallback so React map() doesn't crash
