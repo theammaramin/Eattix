@@ -1,0 +1,61 @@
+/* ─── Footer ─── */
+
+.footer {
+  @apply bg-gray-900 text-gray-300 mt-auto;
+}
+
+.inner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+
+.footerGrid {
+  @apply grid grid-cols-1 md:grid-cols-4 gap-8;
+}
+
+.brand {
+  @apply col-span-1 md:col-span-2;
+}
+
+.logoLink {
+  @apply flex items-center gap-2 text-white font-extrabold text-xl mb-3;
+}
+
+.logoIcon {
+  @apply w-7 h-7 text-brand-400;
+}
+
+.tagline {
+  @apply text-sm text-gray-400 max-w-xs;
+}
+
+.socialRow {
+  @apply flex gap-4 mt-4;
+}
+
+.socialLink {
+  @apply text-gray-400 hover:text-white transition-colors;
+}
+
+.socialIcon {
+  @apply w-5 h-5;
+}
+
+.column {
+  /* nav link columns */
+}
+
+.columnTitle {
+  @apply text-white font-semibold mb-3 text-sm uppercase tracking-wider;
+}
+
+.linkList {
+  @apply space-y-2 text-sm;
+}
+
+.footerLink {
+  @apply hover:text-white transition-colors;
+}
+
+.bottom {
+  @apply border-t border-gray-800 mt-10 pt-6 text-sm text-gray-500 text-center;
+}

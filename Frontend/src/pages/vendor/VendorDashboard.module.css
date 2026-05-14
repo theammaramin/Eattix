@@ -1,0 +1,109 @@
+/* ─── VendorDashboard page ─── */
+
+.page {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+.topRow {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8;
+}
+.pageTitle {
+  @apply text-2xl font-extrabold text-gray-900;
+}
+.pageSubtitle {
+  @apply text-gray-500 text-sm mt-1;
+}
+.topActions {
+  @apply flex gap-2;
+}
+
+/* Stall selector */
+.stallSelector {
+  @apply flex gap-2 mb-6 overflow-x-auto pb-1;
+}
+.stallTab {
+  @apply flex-shrink-0 px-4 py-2 rounded-xl text-sm font-medium border transition-colors bg-white border-gray-300 text-gray-600;
+}
+.stallTabActive {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+/* Active stall info */
+.activeStallCard {
+  @apply card p-4 mb-6 flex items-center gap-4;
+}
+.activeStallImg {
+  @apply w-16 h-16 rounded-xl object-cover flex-shrink-0;
+}
+.activeStallInfo {
+  @apply flex-1;
+}
+.activeStallNameRow {
+  @apply flex items-center gap-2;
+}
+.activeStallName {
+  @apply font-bold text-gray-900;
+}
+.activeStallMeta {
+  @apply text-sm text-gray-500;
+}
+
+/* Stats grid */
+.statsGrid {
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8;
+}
+.statCard {
+  @apply card p-4;
+}
+.statIconWrap {
+  @apply w-10 h-10 rounded-xl flex items-center justify-center mb-3;
+}
+.statIcon {
+  @apply w-5 h-5;
+}
+.statValue {
+  @apply text-xl font-extrabold text-gray-900;
+}
+.statLabel {
+  @apply text-sm text-gray-500;
+}
+
+/* Recent orders */
+.recentCard {
+  @apply card p-5;
+}
+.recentHeader {
+  @apply flex items-center justify-between mb-4;
+}
+.recentTitle {
+  @apply font-bold text-gray-900;
+}
+.recentViewAll {
+  @apply text-sm text-brand-600 font-semibold;
+}
+.recentEmpty {
+  @apply text-center py-8;
+}
+.recentEmptyIcon {
+  @apply w-10 h-10 text-gray-200 mx-auto mb-2;
+}
+.recentEmptyText {
+  @apply text-gray-500 text-sm;
+}
+.recentList {
+  @apply space-y-3;
+}
+.recentOrder {
+  @apply flex items-center justify-between p-3 bg-gray-50 rounded-xl;
+}
+.recentOrderLeft {
+  @apply flex items-center gap-2;
+}
+.recentCode {
+  @apply text-sm font-bold text-gray-900;
+}
+.recentItems {
+  @apply text-xs text-gray-500 mt-0.5;
+}
+.recentTotal {
+  @apply font-bold text-brand-600;
+}

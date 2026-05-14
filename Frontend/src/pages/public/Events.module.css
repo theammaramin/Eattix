@@ -1,0 +1,123 @@
+/* ─── Events browse page ─── */
+
+.page {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+
+.pageHeader {
+  @apply mb-8;
+}
+
+.pageTitle {
+  @apply text-3xl font-extrabold text-gray-900 mb-2;
+}
+
+.pageSubtitle {
+  @apply text-gray-500;
+}
+
+/* Search row */
+.searchRow {
+  @apply flex flex-col sm:flex-row gap-3 mb-6;
+}
+
+.searchForm {
+  @apply flex flex-1 gap-2;
+}
+
+.searchInputWrapper {
+  @apply flex-1 flex items-center gap-2 bg-white border border-gray-300 rounded-xl px-4 py-2.5 focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-transparent transition-all;
+}
+
+.searchIcon {
+  @apply w-4 h-4 text-gray-400 flex-shrink-0;
+}
+
+.clearBtn {
+  @apply text-gray-400 hover:text-gray-600;
+}
+
+.clearIcon {
+  @apply w-4 h-4;
+}
+
+.searchBtn {
+  @apply btn-primary px-5;
+}
+
+/* Filter pills */
+.filterRow {
+  @apply flex flex-wrap gap-3 mb-8;
+}
+
+.filterGroup {
+  @apply flex items-center gap-1.5 flex-wrap;
+}
+
+.filterIcon {
+  @apply w-4 h-4 text-gray-500;
+}
+
+.filterPill {
+  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors bg-white border border-gray-300 text-gray-600 hover:border-brand-400 hover:text-brand-600;
+}
+
+.filterPillActive {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+.statusPill {
+  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors capitalize bg-white border border-gray-300 text-gray-600 hover:border-gray-500;
+}
+
+.statusPillActive {
+  @apply bg-gray-800 text-white border-gray-800;
+}
+
+/* Grid */
+.eventsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5;
+}
+
+/* Skeleton card */
+.skeletonCard {
+  @apply card animate-pulse;
+}
+
+.skeletonImage {
+  @apply h-44 bg-gray-200;
+}
+
+.skeletonBody {
+  @apply p-4 space-y-3;
+}
+
+.skeletonLine {
+  @apply h-4 bg-gray-200 rounded;
+}
+
+/* Empty state */
+.emptyState {
+  @apply text-center py-20;
+}
+
+.emptyEmoji {
+  @apply text-5xl mb-4;
+}
+
+.emptyTitle {
+  @apply text-lg font-bold text-gray-800 mb-2;
+}
+
+.emptySubtitle {
+  @apply text-gray-500;
+}
+
+.clearFiltersBtn {
+  @apply btn-outline mt-4;
+}
+
+/* Results count */
+.resultCount {
+  @apply text-sm text-gray-500 mb-4;
+}

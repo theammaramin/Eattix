@@ -1,0 +1,123 @@
+/* ─── Checkout page ─── */
+
+.emptyState {
+  @apply max-w-lg mx-auto px-4 py-20 text-center;
+}
+.emptyIcon {
+  @apply w-16 h-16 text-gray-200 mx-auto mb-4;
+}
+.emptyTitle {
+  @apply text-xl font-bold text-gray-800 mb-2;
+}
+.emptySubtitle {
+  @apply text-gray-500 mb-5;
+}
+
+.page {
+  @apply max-w-2xl mx-auto px-4 sm:px-6 py-8;
+}
+.backLink {
+  @apply inline-flex items-center gap-1 text-gray-500 hover:text-gray-700 text-sm mb-6 transition-colors;
+}
+.backIcon {
+  @apply w-4 h-4;
+}
+.title {
+  @apply text-2xl font-extrabold text-gray-900 mb-6;
+}
+.stack {
+  @apply space-y-5;
+}
+
+/* Order summary card */
+.summaryCard {
+  @apply card p-5;
+}
+.summaryStallName {
+  @apply font-bold text-gray-900 mb-1;
+}
+.summaryEventName {
+  @apply text-sm text-gray-500 mb-4;
+}
+.itemList {
+  @apply divide-y divide-gray-100;
+}
+.item {
+  @apply flex items-center gap-3 py-3;
+}
+.itemImage {
+  @apply w-12 h-12 rounded-lg object-cover flex-shrink-0;
+}
+.itemInfo {
+  @apply flex-1 min-w-0;
+}
+.itemName {
+  @apply text-sm font-semibold text-gray-900 truncate;
+}
+.itemQty {
+  @apply text-xs text-gray-500;
+}
+.itemTotal {
+  @apply text-sm font-bold text-gray-800;
+}
+.summaryTotal {
+  @apply border-t border-gray-100 pt-3 mt-1 flex justify-between font-bold text-gray-900;
+}
+.summaryTotalValue {
+  @apply text-brand-600 text-lg;
+}
+
+/* Pickup time card */
+.pickupCard {
+  @apply card p-5;
+}
+.pickupTitle {
+  @apply font-bold text-gray-900 mb-3 flex items-center gap-2;
+}
+.pickupIcon {
+  @apply w-4 h-4 text-brand-500;
+}
+.pickupOptions {
+  @apply flex flex-wrap gap-2;
+}
+.pickupBtn {
+  @apply px-4 py-2 rounded-xl text-sm font-medium border transition-colors bg-white border-gray-300 text-gray-600 hover:border-brand-400;
+}
+.pickupBtnActive {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+/* Instructions card */
+.noteCard {
+  @apply card p-5;
+}
+.noteTitle {
+  @apply font-bold text-gray-900 mb-3;
+}
+
+/* Payment card */
+.paymentCard {
+  @apply card p-5;
+}
+.paymentTitle {
+  @apply font-bold text-gray-900 mb-3 flex items-center gap-2;
+}
+.paymentIcon {
+  @apply w-4 h-4 text-brand-500;
+}
+.paymentBox {
+  @apply flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-dashed border-gray-300;
+}
+.paymentBoxIcon {
+  @apply w-8 h-8 text-gray-400;
+}
+.paymentLabel {
+  @apply text-sm font-medium text-gray-700;
+}
+.paymentSub {
+  @apply text-xs text-gray-400;
+}
+
+.placeOrderBtn {
+  @apply btn-primary w-full py-4 text-base;
+}

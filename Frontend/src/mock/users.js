@@ -1,0 +1,36 @@
+export const mockUsers = [
+  {
+    id: 'u1',
+    name: 'Alex Johnson',
+    email: 'customer@eattix.com',
+    password: 'password123',
+    role: 'customer',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
+  },
+  {
+    id: 'u2',
+    name: 'Maria Garcia',
+    email: 'vendor@eattix.com',
+    password: 'password123',
+    role: 'vendor',
+    stallId: 's1',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
+  },
+  {
+    id: 'u3',
+    name: 'James Wilson',
+    email: 'vendor2@eattix.com',
+    password: 'password123',
+    role: 'vendor',
+    stallId: 's2',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
+  },
+  {
+    id: 'u4',
+    name: 'Sarah Chen',
+    email: 'organizer@eattix.com',
+    password: 'password123',
+    role: 'organizer',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
+  },
+];

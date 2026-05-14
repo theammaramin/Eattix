@@ -1,0 +1,119 @@
+/* ─── StallDetail page ─── */
+
+.skeleton {
+  @apply max-w-4xl mx-auto px-4 py-8 animate-pulse;
+}
+.notFound {
+  @apply text-center py-20;
+}
+
+/* Banner */
+.banner {
+  @apply relative h-48 md:h-60 overflow-hidden;
+}
+.bannerImg {
+  @apply w-full h-full object-cover;
+}
+.bannerOverlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent;
+}
+.bannerContent {
+  @apply absolute bottom-0 left-0 right-0 p-5;
+}
+.bannerInner {
+  @apply max-w-4xl mx-auto;
+}
+.backLink {
+  @apply inline-flex items-center gap-1 text-white/80 hover:text-white text-sm mb-2 transition-colors;
+}
+.backIcon {
+  @apply w-4 h-4;
+}
+.badgeRow {
+  @apply flex items-center gap-2 mb-1;
+}
+.bannerTitle {
+  @apply text-2xl font-extrabold text-white;
+}
+
+/* Body */
+.body {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 py-6;
+}
+
+/* Info bar */
+.infoBar {
+  @apply card p-4 mb-6 flex flex-wrap gap-4 items-center justify-between;
+}
+.infoStats {
+  @apply flex flex-wrap gap-4 text-sm text-gray-600;
+}
+.infoStat {
+  @apply flex items-center gap-1.5;
+}
+.starIcon {
+  @apply w-4 h-4 text-yellow-400 fill-yellow-400;
+}
+.statIcon {
+  @apply w-4 h-4 text-brand-500;
+}
+.statBold {
+  @apply font-bold text-gray-800;
+}
+.tagsRow {
+  @apply flex flex-wrap gap-1.5;
+}
+
+/* Category tabs */
+.categoryTabs {
+  @apply flex gap-2 overflow-x-auto pb-2 mb-5 no-scrollbar;
+}
+.categoryTab {
+  @apply flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white border border-gray-300 text-gray-600 hover:border-brand-400;
+}
+.categoryTabActive {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+/* Menu */
+.menuList {
+  @apply space-y-3;
+}
+.menuEmpty {
+  @apply text-center py-12;
+}
+.menuEmptyEmoji {
+  @apply text-4xl mb-3;
+}
+.menuEmptyText {
+  @apply text-gray-500;
+}
+
+/* Conflict modal */
+.modalOverlay {
+  @apply fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4;
+}
+.modal {
+  @apply bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl;
+}
+.modalHeader {
+  @apply flex items-center gap-3 mb-4;
+}
+.modalIconWrap {
+  @apply w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center;
+}
+.modalIcon {
+  @apply w-5 h-5 text-orange-500;
+}
+.modalTitle {
+  @apply font-bold text-gray-900;
+}
+.modalSubtitle {
+  @apply text-sm text-gray-500;
+}
+.modalBody {
+  @apply text-sm text-gray-600 mb-5;
+}
+.modalActions {
+  @apply flex gap-3;
+}

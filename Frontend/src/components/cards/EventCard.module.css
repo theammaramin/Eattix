@@ -1,0 +1,111 @@
+/* ─── Default EventCard ─── */
+
+.eventCard {
+  @apply card block hover:shadow-md transition-shadow duration-200;
+}
+
+.imageWrapper {
+  @apply relative overflow-hidden h-44;
+}
+
+.image {
+  @apply w-full h-full object-cover transition-transform duration-300;
+}
+/* parent must have class="group" for this to fire */
+.imageHover {
+  @apply group-hover:scale-105;
+}
+
+.badgeRow {
+  @apply absolute top-3 left-3 flex gap-2;
+}
+
+.body {
+  @apply p-4;
+}
+
+.title {
+  @apply font-bold text-gray-900 text-base leading-tight mb-2 transition-colors line-clamp-2;
+}
+
+.titleHover {
+  @apply group-hover:text-brand-600;
+}
+
+.meta {
+  @apply space-y-1.5 text-sm text-gray-500;
+}
+
+.metaRow {
+  @apply flex items-center gap-1.5;
+}
+
+.metaIcon {
+  @apply w-3.5 h-3.5 text-brand-500 flex-shrink-0;
+}
+
+.metaText {
+  @apply truncate;
+}
+
+.tagRow {
+  @apply flex flex-wrap gap-1.5 mt-3;
+}
+
+.tag {
+  @apply flex items-center gap-1 text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full;
+}
+
+.tagIcon {
+  @apply w-2.5 h-2.5;
+}
+
+/* ─── EventCardScroll (horizontal row variant) ─── */
+
+.scrollLink {
+  @apply flex-shrink-0 w-64 block;
+}
+
+.scrollImageWrapper {
+  @apply relative overflow-hidden rounded-xl h-40 mb-3;
+}
+
+.scrollImage {
+  @apply w-full h-full object-cover transition-transform duration-300;
+}
+
+.scrollImageHover {
+  @apply group-hover:scale-105;
+}
+
+.scrollGradient {
+  @apply absolute inset-0 bg-gradient-to-t from-black/40 to-transparent;
+}
+
+.interestedBadge {
+  @apply absolute bottom-2 right-2 flex items-center gap-1 bg-black/50 text-white text-xs px-2 py-0.5 rounded-full;
+}
+
+.scrollCategoryBadge {
+  @apply absolute top-2 left-2 badge bg-white/90 text-gray-700 text-xs shadow-sm;
+}
+
+.scrollMeta {
+  /* text content area below the image */
+}
+
+.scrollDate {
+  @apply text-xs font-bold text-brand-600 mb-0.5;
+}
+
+.scrollTitle {
+  @apply font-bold text-gray-900 text-sm leading-tight transition-colors line-clamp-2 mb-1;
+}
+
+.scrollTitleHover {
+  @apply group-hover:text-brand-600;
+}
+
+.scrollLocation {
+  @apply text-xs text-gray-500 truncate;
+}

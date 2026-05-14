@@ -1,0 +1,120 @@
+/* ─── OrganizerDashboard page ─── */
+
+.page {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+.topRow {
+  @apply flex items-center justify-between mb-8;
+}
+.pageTitle {
+  @apply text-2xl font-extrabold text-gray-900;
+}
+.pageSubtitle {
+  @apply text-gray-500 text-sm mt-1;
+}
+.topActions {
+  @apply flex gap-2;
+}
+
+/* Stats */
+.statsGrid {
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8;
+}
+.statCard {
+  @apply card p-4;
+}
+.statIconWrap {
+  @apply w-10 h-10 rounded-xl flex items-center justify-center mb-3;
+}
+.statIcon {
+  @apply w-5 h-5;
+}
+.statValue {
+  @apply text-2xl font-extrabold text-gray-900;
+}
+.statLabel {
+  @apply text-sm text-gray-500;
+}
+
+/* Pending banner */
+.pendingBanner {
+  @apply bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6 flex items-center justify-between;
+}
+.pendingBannerLeft {
+  @apply flex items-center gap-3;
+}
+.pendingBadge {
+  @apply w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center;
+}
+.pendingBadgeNum {
+  @apply text-orange-600 font-bold text-sm;
+}
+.pendingTitle {
+  @apply font-semibold text-orange-800;
+}
+.pendingSubtitle {
+  @apply text-sm text-orange-600;
+}
+.pendingBtn {
+  @apply btn-primary text-sm bg-orange-500 hover:bg-orange-600;
+}
+
+/* Events grid */
+.eventsHeader {
+  @apply text-lg font-bold text-gray-900 mb-4;
+}
+.eventsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+.skeletonCard {
+  @apply card h-40 animate-pulse;
+}
+.emptyCard {
+  @apply text-center py-16 card;
+}
+.emptyIcon {
+  @apply w-14 h-14 text-gray-200 mx-auto mb-4;
+}
+.emptyTitle {
+  @apply font-bold text-gray-800 mb-2;
+}
+
+/* Event card link */
+.eventCardLink {
+  @apply card hover:shadow-md transition-shadow block;
+}
+.eventCardImg {
+  @apply h-32 overflow-hidden;
+}
+.eventCardImgEl {
+  @apply w-full h-full object-cover;
+}
+.eventCardBody {
+  @apply p-4;
+}
+.eventCardBadgeRow {
+  @apply flex items-center gap-2 mb-1;
+}
+.eventCardTitle {
+  @apply font-bold text-gray-900 text-sm leading-tight mb-1 truncate;
+}
+.eventCardDate {
+  @apply text-xs text-gray-500;
+}
+.eventCardStallCount {
+  @apply text-xs text-gray-400 mt-1;
+}
+
+/* Add event card */
+.addEventCard {
+  @apply card border-2 border-dashed border-gray-300 hover:border-brand-400 flex items-center justify-center min-h-[180px] transition-colors;
+}
+.addEventCardContent {
+  @apply text-center;
+}
+.addEventIcon {
+  @apply w-8 h-8 text-gray-300 group-hover:text-brand-400 mx-auto mb-2 transition-colors;
+}
+.addEventLabel {
+  @apply text-sm text-gray-400 group-hover:text-brand-500 font-medium transition-colors;
+}

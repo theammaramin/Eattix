@@ -1,0 +1,65 @@
+/* ─── OrderHistory page ─── */
+
+.notSignedIn {
+  @apply max-w-lg mx-auto px-4 py-20 text-center;
+}
+.notSignedInIcon {
+  @apply w-16 h-16 text-gray-200 mx-auto mb-4;
+}
+.notSignedInTitle {
+  @apply text-xl font-bold text-gray-800 mb-2;
+}
+
+.page {
+  @apply max-w-2xl mx-auto px-4 sm:px-6 py-8;
+}
+.topRow {
+  @apply flex items-center justify-between mb-6;
+}
+.title {
+  @apply text-2xl font-extrabold text-gray-900;
+}
+.browseLink {
+  @apply flex items-center gap-1 text-brand-600 text-sm font-semibold hover:gap-2 transition-all;
+}
+.browseLinkIcon {
+  @apply w-4 h-4;
+}
+
+/* Filter tabs */
+.filterRow {
+  @apply flex gap-2 mb-5 overflow-x-auto pb-1;
+}
+.filterTab {
+  @apply flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium capitalize transition-colors bg-white border border-gray-300 text-gray-600 hover:border-brand-400;
+}
+.filterTabActive {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+/* Skeleton */
+.skeletonList {
+  @apply space-y-3;
+}
+.skeletonCard {
+  @apply card p-4 animate-pulse;
+}
+
+/* Empty state */
+.emptyState {
+  @apply text-center py-16;
+}
+.emptyIcon {
+  @apply w-14 h-14 text-gray-200 mx-auto mb-4;
+}
+.emptyTitle {
+  @apply font-bold text-gray-700 mb-1;
+}
+.emptySubtitle {
+  @apply text-sm text-gray-500 mb-4;
+}
+
+/* Order list */
+.orderList {
+  @apply space-y-3;
+}

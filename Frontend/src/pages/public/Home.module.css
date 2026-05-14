@@ -1,0 +1,315 @@
+/* ─── Home page ─── */
+
+/* ── Hero ── */
+.hero {
+  @apply relative bg-gradient-to-br from-brand-700 via-brand-500 to-orange-400 text-white overflow-hidden;
+}
+.heroOverlay {
+  @apply absolute inset-0 bg-black/30;
+}
+.heroBg {
+  @apply absolute inset-0 opacity-15;
+}
+.heroContent {
+  @apply relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+}
+.heroInner {
+  @apply max-w-2xl;
+}
+.heroBadge {
+  @apply inline-flex items-center gap-2 bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm;
+}
+.heroTitle {
+  @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5;
+}
+.heroTitleHighlight {
+  @apply text-yellow-300;
+}
+.heroSubtitle {
+  @apply text-lg text-white/85 mb-6 max-w-xl leading-relaxed;
+}
+
+/* Hero search */
+.heroSearchForm {
+  @apply flex gap-2 max-w-xl mb-5;
+}
+.heroSearchBox {
+  @apply flex-1 flex items-center gap-2 bg-white rounded-xl px-4 py-3 shadow-xl;
+}
+.heroSearchIcon {
+  @apply w-5 h-5 text-gray-400 flex-shrink-0;
+}
+.heroSearchBtn {
+  @apply bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-3 rounded-xl transition-colors shadow-xl whitespace-nowrap;
+}
+
+/* Date filter pills */
+.dateFilterRow {
+  @apply flex gap-2 flex-wrap;
+}
+.datePill {
+  @apply px-4 py-1.5 rounded-full text-sm font-semibold transition-all bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm;
+}
+.datePillActive {
+  @apply bg-white text-brand-600 shadow-md;
+}
+
+/* ── Category sticky bar ── */
+.categoryBar {
+  @apply bg-white border-b border-gray-200 sticky top-16 z-30 shadow-sm;
+}
+.categoryBarInner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.categoryPillsRow {
+  @apply flex gap-2 overflow-x-auto py-3;
+}
+.categoryPill {
+  @apply flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 hover:bg-brand-50 hover:text-brand-700 text-gray-700 transition-colors whitespace-nowrap border border-transparent hover:border-brand-200;
+}
+
+/* ── Stats ── */
+.statsSection {
+  @apply bg-white border-b border-gray-100;
+}
+.statsInner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7;
+}
+.statsGrid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+.statItem {
+  @apply flex items-center gap-3;
+}
+.statIconWrap {
+  @apply w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0;
+}
+.statIcon {
+  @apply w-5 h-5 text-brand-500;
+}
+.statValue {
+  @apply text-xl font-extrabold text-gray-900 leading-none;
+}
+.statLabel {
+  @apply text-xs text-gray-500 mt-0.5;
+}
+
+/* ── Scroll row sections ── */
+.scrollSection {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6;
+}
+.scrollSectionStd {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+}
+.scrollSectionStalls {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10;
+}
+.noEventsText {
+  @apply text-gray-400 text-sm py-8;
+}
+
+/* ── ScrollRow component ── */
+.scrollRowWrapper {
+  @apply relative;
+}
+.scrollRowList {
+  @apply flex gap-5 overflow-x-auto pb-4 scroll-smooth;
+}
+.scrollBtnLeft {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-9 h-9 bg-white shadow-lg rounded-full flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity border border-gray-200 hover:bg-gray-50;
+}
+.scrollBtnRight {
+  @apply absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-9 h-9 bg-white shadow-lg rounded-full flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity border border-gray-200 hover:bg-gray-50;
+}
+.scrollBtnIcon {
+  @apply w-4 h-4 text-gray-700;
+}
+
+/* ── SectionHeader component ── */
+.sectionHeader {
+  @apply flex items-baseline justify-between mb-5;
+}
+.sectionTitle {
+  @apply text-xl font-extrabold text-gray-900 uppercase tracking-tight;
+}
+.sectionLink {
+  @apply text-brand-600 hover:text-brand-700 text-sm font-bold uppercase tracking-wide flex items-center gap-1 hover:gap-2 transition-all;
+}
+.sectionLinkIcon {
+  @apply w-4 h-4;
+}
+
+/* ── Skeleton scroll row ── */
+.skeletonRow {
+  @apply flex gap-5 overflow-hidden;
+}
+.skeletonCard {
+  @apply flex-shrink-0 w-64 animate-pulse;
+}
+.skeletonCardImg {
+  @apply h-40 bg-gray-200 rounded-xl mb-3;
+}
+
+/* ── Category grid ── */
+.categoryGridSection {
+  @apply bg-gray-50 py-12;
+}
+.categoryGridInner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.categoryGridHeader {
+  @apply flex items-baseline justify-between mb-6;
+}
+.categoryGridTitle {
+  @apply text-xl font-extrabold text-gray-900 uppercase tracking-tight;
+}
+.categoryGridSubtitle {
+  @apply text-sm text-gray-500 mt-1;
+}
+.categoryGridAllLink {
+  @apply text-brand-600 hover:text-brand-700 text-sm font-bold uppercase tracking-wide flex items-center gap-1;
+}
+.categoryGrid {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3;
+}
+.categoryGridItem {
+  @apply relative overflow-hidden rounded-2xl h-32 block;
+}
+.categoryGridItemImg {
+  @apply w-full h-full object-cover group-hover:scale-105 transition-transform duration-300;
+}
+.categoryGridItemContent {
+  @apply absolute inset-0 flex flex-col items-start justify-end p-3;
+}
+.categoryGridItemEmoji {
+  @apply text-2xl mb-1 drop-shadow-lg;
+}
+.categoryGridItemLabel {
+  @apply text-white font-extrabold text-sm drop-shadow-lg;
+}
+
+/* ── How It Works ── */
+.howSection {
+  @apply bg-brand-50 border-y border-brand-100 py-14;
+}
+.howInner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.howHeader {
+  @apply text-center mb-10;
+}
+.howTitle {
+  @apply text-2xl font-extrabold text-gray-900 mb-2;
+}
+.howSubtitle {
+  @apply text-gray-500 max-w-md mx-auto text-sm;
+}
+.howGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+.howStep {
+  @apply relative text-center;
+}
+.howConnector {
+  @apply hidden md:block absolute top-8 left-[calc(50%+3rem)] w-[calc(100%-6rem)] h-px border-t-2 border-dashed border-brand-200;
+}
+.howIconWrap {
+  @apply w-16 h-16 bg-brand-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-200;
+}
+.howStepIcon {
+  @apply w-7 h-7 text-white;
+}
+.howStepNum {
+  @apply text-xs font-extrabold text-brand-400 tracking-widest uppercase;
+}
+.howStepTitle {
+  @apply text-base font-extrabold text-gray-900 mt-1 mb-2;
+}
+.howStepDesc {
+  @apply text-sm text-gray-500 leading-relaxed max-w-xs mx-auto;
+}
+
+/* ── All Events grid ── */
+.allEventsSection {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+.allEventsHeader {
+  @apply flex items-baseline justify-between mb-6;
+}
+.allEventsTitle {
+  @apply text-xl font-extrabold text-gray-900 uppercase tracking-tight;
+}
+.allEventsSubtitle {
+  @apply text-gray-500 text-sm mt-1;
+}
+.allEventsLink {
+  @apply text-brand-600 hover:text-brand-700 text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all;
+}
+.allEventsLinkIcon {
+  @apply w-4 h-4;
+}
+.eventsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5;
+}
+.skeletonEventCard {
+  @apply card animate-pulse;
+}
+.skeletonEventImg {
+  @apply h-44 bg-gray-200;
+}
+.skeletonEventBody {
+  @apply p-4 space-y-3;
+}
+
+/* ── Dual CTA Banner ── */
+.ctaSection {
+  @apply bg-gray-900 py-12;
+}
+.ctaInner {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+.ctaGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+}
+.ctaVendor {
+  @apply relative overflow-hidden bg-gradient-to-br from-brand-600 to-orange-500 rounded-2xl p-7 text-white;
+}
+.ctaOrganizer {
+  @apply relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-7 text-white;
+}
+.ctaCircleLg {
+  @apply absolute -right-6 -bottom-6 w-32 h-32 rounded-full;
+}
+.ctaCircleSm {
+  @apply absolute -right-2 -bottom-12 w-20 h-20 rounded-full;
+}
+.ctaCircleLight {
+  @apply bg-white/10;
+}
+.ctaCircleDark {
+  @apply bg-white/5;
+}
+.ctaContent {
+  @apply relative;
+}
+.ctaEmoji {
+  @apply text-3xl mb-3 block;
+}
+.ctaTitle {
+  @apply text-xl font-extrabold mb-2;
+}
+.ctaVendorBody {
+  @apply text-white/80 text-sm mb-5 leading-relaxed max-w-xs;
+}
+.ctaOrgBody {
+  @apply text-white/70 text-sm mb-5 leading-relaxed max-w-xs;
+}
+.ctaVendorBtn {
+  @apply inline-flex items-center gap-2 bg-white text-brand-600 font-bold px-5 py-2.5 rounded-xl hover:bg-yellow-50 transition-colors text-sm;
+}
+.ctaOrgBtn {
+  @apply inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-5 py-2.5 rounded-xl transition-colors text-sm;
+}
+.ctaBtnIcon {
+  @apply w-4 h-4;
+}

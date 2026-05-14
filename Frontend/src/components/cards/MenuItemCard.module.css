@@ -1,0 +1,81 @@
+/* ─── MenuItemCard ─── */
+
+.itemCard {
+  @apply card flex gap-3 p-3;
+}
+
+.cardUnavailable {
+  @apply opacity-60;
+}
+
+.thumbnail {
+  @apply flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden;
+}
+
+.thumbnailImage {
+  @apply w-full h-full object-cover;
+}
+
+.content {
+  @apply flex-1 min-w-0 flex flex-col justify-between;
+}
+
+.header {
+  @apply flex items-start justify-between gap-2;
+}
+
+.name {
+  @apply font-semibold text-gray-900 text-sm leading-tight;
+}
+
+.popularBadge {
+  @apply badge bg-brand-100 text-brand-700 flex-shrink-0 text-xs;
+}
+
+.bestSellerBadge {
+  @apply badge bg-yellow-100 text-yellow-700 flex-shrink-0 text-xs;
+}
+
+.description {
+  @apply text-xs text-gray-500 mt-1 line-clamp-2;
+}
+
+.tagRow {
+  @apply flex flex-wrap gap-1 mt-1.5;
+}
+
+.tag {
+  @apply text-xs bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full;
+}
+
+.footer {
+  @apply flex items-center justify-between mt-2;
+}
+
+.priceBlock {
+  /* wrapper for price + prep time */
+}
+
+.price {
+  @apply text-base font-bold text-brand-600;
+}
+
+.prepTime {
+  @apply flex items-center gap-1 text-xs text-gray-400 mt-0.5;
+}
+
+.prepTimeIcon {
+  @apply w-3 h-3;
+}
+
+.addButton {
+  @apply flex items-center gap-1 bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors;
+}
+
+.addButtonDisabled {
+  @apply disabled:bg-gray-200 disabled:text-gray-400;
+}
+
+.addIcon {
+  @apply w-3.5 h-3.5;
+}

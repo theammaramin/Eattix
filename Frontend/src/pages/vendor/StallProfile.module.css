@@ -1,0 +1,73 @@
+/* ─── StallProfile page ─── */
+
+.skeleton {
+  @apply max-w-2xl mx-auto px-4 py-20 text-center animate-pulse;
+}
+.notFound {
+  @apply max-w-2xl mx-auto px-4 py-20 text-center;
+}
+.notFoundIcon {
+  @apply w-16 h-16 text-gray-200 mx-auto mb-4;
+}
+.notFoundTitle {
+  @apply text-xl font-bold text-gray-800 mb-2;
+}
+.notFoundText {
+  @apply text-gray-500;
+}
+
+.page {
+  @apply max-w-2xl mx-auto px-4 sm:px-6 py-8;
+}
+.topRow {
+  @apply flex items-center justify-between mb-6;
+}
+.title {
+  @apply text-2xl font-extrabold text-gray-900;
+}
+.saveBtn {
+  @apply btn-primary flex items-center gap-1.5;
+}
+.saveBtnIcon {
+  @apply w-4 h-4;
+}
+
+/* Preview card */
+.previewCard {
+  @apply card overflow-hidden mb-6;
+}
+.previewBanner {
+  @apply h-32 overflow-hidden;
+}
+.previewBannerImg {
+  @apply w-full h-full object-cover;
+}
+.previewInfo {
+  @apply p-4 flex items-center gap-3;
+}
+.previewStallImg {
+  @apply w-14 h-14 rounded-xl object-cover flex-shrink-0;
+}
+.previewName {
+  @apply font-bold text-gray-900;
+}
+.previewCategory {
+  @apply text-sm text-gray-500;
+}
+.previewStatusWrap {
+  @apply ml-auto;
+}
+
+/* Form card */
+.formCard {
+  @apply card p-6 space-y-4;
+}
+.fieldLabel {
+  @apply block text-sm font-semibold text-gray-700 mb-1;
+}
+.checkboxRow {
+  @apply flex items-center gap-2 cursor-pointer;
+}
+.checkboxLabel {
+  @apply text-sm font-medium text-gray-700;
+}

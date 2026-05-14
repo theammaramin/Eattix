@@ -1,0 +1,65 @@
+/* ─── OrderCard ─── */
+
+.link {
+  @apply card block hover:shadow-md transition-shadow p-4;
+}
+
+.row {
+  @apply flex items-start justify-between gap-3;
+}
+
+.left {
+  @apply flex-1 min-w-0;
+}
+
+.statusRow {
+  @apply flex items-center gap-2 mb-1;
+}
+
+.orderBadge {
+  @apply badge font-semibold;
+}
+
+.timestamp {
+  @apply text-xs text-gray-400 flex items-center gap-1;
+}
+
+.timestampIcon {
+  @apply w-3 h-3;
+}
+
+.stallName {
+  @apply font-bold text-gray-900 text-sm truncate;
+}
+
+.eventName {
+  @apply text-xs text-gray-500 truncate;
+}
+
+.itemList {
+  @apply mt-2 text-xs text-gray-600;
+}
+
+.right {
+  @apply flex flex-col items-end gap-2;
+}
+
+.total {
+  @apply font-bold text-brand-600;
+}
+
+.chevron {
+  @apply w-4 h-4 text-gray-400;
+}
+
+.activeFooter {
+  @apply mt-3 pt-3 border-t border-gray-100 flex items-center gap-2;
+}
+
+.activeDot {
+  @apply w-2 h-2 bg-brand-500 rounded-full animate-pulse;
+}
+
+.activeLabel {
+  @apply text-xs font-medium text-brand-600;
+}

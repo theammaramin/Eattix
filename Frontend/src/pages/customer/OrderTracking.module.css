@@ -1,0 +1,138 @@
+/* ─── OrderTracking page ─── */
+
+.skeleton {
+  @apply max-w-lg mx-auto px-4 py-20 text-center animate-pulse;
+}
+
+.page {
+  @apply max-w-lg mx-auto px-4 sm:px-6 py-8;
+}
+.backLink {
+  @apply inline-flex items-center gap-1 text-gray-500 hover:text-gray-700 text-sm mb-6 transition-colors;
+}
+.backIcon {
+  @apply w-4 h-4;
+}
+
+/* Status banner */
+.statusBanner {
+  @apply rounded-2xl p-5 mb-6 text-white;
+}
+.statusBannerPlaced   { @apply bg-brand-500; }
+.statusBannerReady    { @apply bg-green-500; }
+.statusBannerDone     { @apply bg-gray-600; }
+.statusBannerCancelled { @apply bg-red-500; }
+
+.statusTop {
+  @apply flex items-center justify-between mb-3;
+}
+.statusStallName {
+  @apply text-white/80 text-sm;
+}
+.statusHeading {
+  @apply text-xl font-extrabold;
+}
+.statusSpinner {
+  @apply w-10 h-10 rounded-full bg-white/20 flex items-center justify-center;
+}
+.spinnerIcon {
+  @apply w-5 h-5 text-white animate-spin-slow;
+}
+
+.pickupCodeBox {
+  @apply flex items-center gap-2 bg-white/20 rounded-xl p-3;
+}
+.pickupCodeIcon {
+  @apply w-4 h-4;
+}
+.pickupCodeLabel {
+  @apply text-xs text-white/70;
+}
+.pickupCode {
+  @apply text-2xl font-black tracking-widest;
+}
+
+/* Progress */
+.progressCard {
+  @apply card p-5 mb-5;
+}
+.progressTitle {
+  @apply font-bold text-gray-900 mb-5;
+}
+.progressSteps {
+  @apply space-y-4;
+}
+.step {
+  @apply flex items-start gap-3;
+}
+.stepDot {
+  @apply flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors;
+}
+.stepDotDone   { @apply bg-green-500 border-green-500; }
+.stepDotActive { @apply bg-brand-500 border-brand-500; }
+.stepDotIdle   { @apply bg-white border-gray-300; }
+.stepIcon      { @apply w-4 h-4; }
+.stepIconActive { @apply text-white; }
+.stepIconIdle   { @apply text-gray-400; }
+
+.stepContent {
+  @apply flex-1 pt-0.5;
+}
+.stepHeader {
+  @apply flex items-center justify-between;
+}
+.stepLabel {
+  @apply text-sm font-semibold;
+}
+.stepLabelActive { @apply text-gray-900; }
+.stepLabelIdle   { @apply text-gray-400; }
+.stepBadgeCurrent {
+  @apply text-xs bg-brand-100 text-brand-700 px-2 py-0.5 rounded-full font-medium animate-pulse;
+}
+.stepBadgeDone {
+  @apply text-xs text-green-600 font-medium;
+}
+.stepDesc {
+  @apply text-xs mt-0.5;
+}
+.stepDescActive { @apply text-gray-500; }
+.stepDescIdle   { @apply text-gray-300; }
+
+/* Order details */
+.detailsCard {
+  @apply card p-5;
+}
+.detailsTitle {
+  @apply font-bold text-gray-900 mb-4;
+}
+.detailsItems {
+  @apply space-y-2 mb-4;
+}
+.detailItem {
+  @apply flex justify-between text-sm;
+}
+.detailItemName {
+  @apply text-gray-700;
+}
+.detailItemPrice {
+  @apply font-medium text-gray-800;
+}
+.detailsTotal {
+  @apply border-t border-gray-100 pt-3 flex justify-between font-bold;
+}
+.detailsTotalValue {
+  @apply text-brand-600;
+}
+.detailNote {
+  @apply mt-3 p-3 bg-gray-50 rounded-lg text-sm text-gray-600;
+}
+.detailNoteBold {
+  @apply font-medium;
+}
+.detailPlacedAt {
+  @apply text-xs text-gray-400 mt-3;
+}
+
+.completedActions {
+  @apply mt-5 text-center;
+}
