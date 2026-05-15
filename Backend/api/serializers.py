@@ -1,5 +1,7 @@
+import random
+import string
 from rest_framework import serializers
-from .models import Event, Stall, MenuItem, User
+from .models import Event, Stall, MenuItem, User, Order, OrderItem
 
 class UserSerializer(serializers.ModelSerializer):
     # React expects string IDs, so we explicitly cast the integer to a string
@@ -71,3 +73,52 @@ class StallSerializer(serializers.ModelSerializer):
 
     def get_tags(self, obj):
         return ["Popular", "Fresh"] # Fallback so React map() doesn't crash
+
+# --- NEW CHECKOUT SERIALIZERS ---
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    # Map menuItemId from the cart to the menu_item foreign key
+    menuItemId = serializers.PrimaryKeyRelatedField(source='menu_item', queryset=MenuItem.objects.all(), required=False, allow_null=True)
+
+    class Meta:
+        model = OrderItem
+        fields = ['menuItemId', 'name', 'price', 'quantity']
+
+class OrderSerializer(serializers.ModelSerializer):
+    customerId = serializers.PrimaryKeyRelatedField(source='customer', queryset=User.objects.all())
+    stallId = serializers.PrimaryKeyRelatedField(source='stall', queryset=Stall.objects.all())
+    eventId = serializers.PrimaryKeyRelatedField(source='event', queryset=Event.objects.all())
+    
+    # Catch the array of cart items
+    items = OrderItemSerializer(many=True)
+    
+    # Map the read-only generated fields back to the frontend
+    pickupCode = serializers.CharField(source='pickup_code', read_only=True)
+    estimatedTime = serializers.CharField(source='estimated_time', read_only=True)
+    placedAt = serializers.DateTimeField(source='placed_at', read_only=True)
+    updatedAt = serializers.DateTimeField(source='updated_at', read_only=True)
+
+    class Meta:
+        model = Order
+        fields = [
+            'id', 'customerId', 'stallId', 'eventId', 'total', 
+            'status', 'pickupCode', 'estimatedTime', 'note', 
+            'placedAt', 'updatedAt', 'items'
+        ]
+
+    def create(self, validated_data):
+        # 1. Pull the array of items out of the data
+        items_data = validated_data.pop('items')
+        
+        # 2. Generate a random 4-character pickup code (e.g., "A7B2")
+        validated_data['pickup_code'] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=4))
+        validated_data['estimated_time'] = "15-20 mins"
+
+        # 3. Save the main Order first
+        order = Order.objects.create(**validated_data)
+        
+        # 4. Loop through the cart and save each OrderItem connected to the main Order
+        for item_data in items_data:
+            OrderItem.objects.create(order=order, **item_data)
+            
+        return order

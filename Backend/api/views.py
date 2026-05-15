@@ -1,16 +1,13 @@
+import uuid
+from django.db.models import Q
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.response import Response
-from django.db.models import Q
-import uuid
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import User
-from .serializers import UserSerializer
 
 # Import all the models and serializers
-from .models import Event, Stall, MenuItem
-from .serializers import EventSerializer, StallSerializer, MenuItemSerializer
+from .models import User, Event, Stall, MenuItem, Order
+from .serializers import UserSerializer, EventSerializer, StallSerializer, MenuItemSerializer, OrderSerializer
 
 class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
@@ -118,6 +115,7 @@ class LoginView(APIView):
         except User.DoesNotExist:
             return Response({'detail': 'Invalid email or password'}, status=400)
 
+
 class RegisterView(APIView):
     def post(self, request):
         email = request.data.get('email')
@@ -144,8 +142,40 @@ class RegisterView(APIView):
             'token': token
         })
 
+
 class LogoutView(APIView):
     def post(self, request):
         # React handles clearing the token from localStorage, 
         # so Django just needs to send a success message.
         return Response({'success': True})
+
+
+class OrderViewSet(viewsets.ModelViewSet):
+    serializer_class = OrderSerializer
+
+    def get_queryset(self):
+        # Always return newest orders first
+        queryset = Order.objects.all().order_by('-placed_at')
+        
+        # Matches: getOrdersByCustomer -> /api/orders/?customerId=...
+        customer_id = self.request.query_params.get('customerId', None)
+        if customer_id:
+            queryset = queryset.filter(customer=customer_id)
+            
+        # Matches: getOrdersByStall -> /api/orders/?stallId=...
+        stall_id = self.request.query_params.get('stallId', None)
+        if stall_id:
+            queryset = queryset.filter(stall=stall_id)
+            
+        return queryset
+
+    # Matches: updateOrderStatus -> /api/orders/:orderId/status/
+    @action(detail=True, methods=['patch'])
+    def status(self, request, pk=None):
+        order = self.get_object()
+        status_val = request.data.get('status')
+        if status_val:
+            order.status = status_val
+            order.save()
+        serializer = self.get_serializer(order)
+        return Response(serializer.data)

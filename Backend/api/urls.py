@@ -6,6 +6,7 @@ from .views import (
     EventViewSet, 
     StallViewSet, 
     MenuItemViewSet, 
+    OrderViewSet,
     LoginView, 
     RegisterView, 
     LogoutView
@@ -15,6 +16,8 @@ router = DefaultRouter()
 router.register(r'events', EventViewSet, basename='event')
 router.register(r'stalls', StallViewSet, basename='stall')
 router.register(r'menu-items', MenuItemViewSet, basename='menuitem')
+# Register the new Order route
+router.register(r'orders', OrderViewSet, basename='order')
 
 urlpatterns = [
     # Your standard ViewSet routes
