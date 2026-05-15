@@ -2,6 +2,11 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q
+import uuid
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import User
+from .serializers import UserSerializer
 
 # Import all the models and serializers
 from .models import Event, Stall, MenuItem
@@ -92,3 +97,55 @@ class StallViewSet(viewsets.ModelViewSet):
 class MenuItemViewSet(viewsets.ModelViewSet):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
+
+
+class LoginView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+        
+        try:
+            # Find the user in the database
+            user = User.objects.get(email=email, password=password)
+            serializer = UserSerializer(user)
+            # Generate a secure-looking token for the session
+            token = f"eattix-token-{user.id}-{uuid.uuid4()}"
+            
+            return Response({
+                'user': serializer.data, 
+                'token': token
+            })
+        except User.DoesNotExist:
+            return Response({'detail': 'Invalid email or password'}, status=400)
+
+class RegisterView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        
+        # Check if email is already taken
+        if User.objects.filter(email=email).exists():
+            return Response({'detail': 'An account with this email already exists'}, status=400)
+        
+        # Create the new user
+        name = request.data.get('name')
+        user = User.objects.create(
+            name=name,
+            email=email,
+            password=request.data.get('password'),
+            role=request.data.get('role', 'customer'),
+            avatar=f"https://api.dicebear.com/7.x/avataaars/svg?seed={name}"
+        )
+        
+        serializer = UserSerializer(user)
+        token = f"eattix-token-{user.id}-{uuid.uuid4()}"
+        
+        return Response({
+            'user': serializer.data, 
+            'token': token
+        })
+
+class LogoutView(APIView):
+    def post(self, request):
+        # React handles clearing the token from localStorage, 
+        # so Django just needs to send a success message.
+        return Response({'success': True})

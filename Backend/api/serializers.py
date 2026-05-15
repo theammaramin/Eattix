@@ -1,6 +1,13 @@
 from rest_framework import serializers
-from .models import Event
-from .models import Stall, MenuItem
+from .models import Event, Stall, MenuItem, User
+
+class UserSerializer(serializers.ModelSerializer):
+    # React expects string IDs, so we explicitly cast the integer to a string
+    id = serializers.CharField(read_only=True) 
+    
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'email', 'role', 'avatar']
 
 class EventSerializer(serializers.ModelSerializer):
     # 1. Map Django's snake_case to React's camelCase
