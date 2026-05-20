@@ -14,7 +14,9 @@ class UserSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     # 1. Map Django's snake_case to React's camelCase
     endDate = serializers.DateField(source='end_date')
-    organizerId = serializers.PrimaryKeyRelatedField(source='organizer', read_only=True)
+    
+    # --- FIXED: Tell Django to accept the organizer ID from React! ---
+    organizerId = serializers.PrimaryKeyRelatedField(source='organizer', queryset=User.objects.all())
     
     # 2. Add computed fields
     stallCount = serializers.SerializerMethodField()
@@ -74,7 +76,8 @@ class StallSerializer(serializers.ModelSerializer):
     def get_tags(self, obj):
         return ["Popular", "Fresh"] # Fallback so React map() doesn't crash
 
-# --- NEW CHECKOUT SERIALIZERS ---
+
+# --- CHECKOUT SERIALIZERS ---
 
 class OrderItemSerializer(serializers.ModelSerializer):
     # Map menuItemId from the cart to the menu_item foreign key
