@@ -73,13 +73,22 @@ const CheckoutForm = () => {
         }
 
         // 1. Ask backend to create a PaymentIntent
-        const { data } = await api.post("/api/create-payment-intent/", {
-          amount: getTotal(),
-        });
+        let clientSecret;
+        try {
+          const { data } = await api.post("/api/create-payment-intent/", {
+            amount: getTotal(),
+          });
+          clientSecret = data.clientSecret;
+        } catch (err) {
+          const msg = err?.response?.data?.error || err.message || "Could not connect to payment server.";
+          toast.error(`Payment setup failed: ${msg}`);
+          setIsPaying(false);
+          return;
+        }
 
         // 2. Confirm the card payment on the frontend
         const { error, paymentIntent } = await stripe.confirmCardPayment(
-          data.clientSecret,
+          clientSecret,
           {
             payment_method: {
               card: elements.getElement(CardElement),
