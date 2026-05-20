@@ -3,13 +3,14 @@ from rest_framework.routers import DefaultRouter
 
 # Import all your ViewSets and Auth APIViews
 from .views import (
-    EventViewSet, 
-    StallViewSet, 
-    MenuItemViewSet, 
+    EventViewSet,
+    StallViewSet,
+    MenuItemViewSet,
     OrderViewSet,
-    LoginView, 
-    RegisterView, 
-    LogoutView
+    LoginView,
+    RegisterView,
+    LogoutView,
+    CreatePaymentIntentView,
 )
 
 router = DefaultRouter()
@@ -27,4 +28,7 @@ urlpatterns = [
     path('auth/login/', LoginView.as_view(), name='login'),
     path('auth/register/', RegisterView.as_view(), name='register'),
     path('auth/logout/', LogoutView.as_view(), name='logout'),
+
+    # Stripe
+    path('create-payment-intent/', CreatePaymentIntentView.as_view(), name='create-payment-intent'),
 ]

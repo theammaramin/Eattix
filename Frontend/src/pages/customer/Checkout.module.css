@@ -105,17 +105,38 @@
 .paymentIcon {
   @apply w-4 h-4 text-brand-500;
 }
-.paymentBox {
-  @apply flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-dashed border-gray-300;
+.paymentOptions {
+  @apply space-y-3;
 }
-.paymentBoxIcon {
-  @apply w-8 h-8 text-gray-400;
+.paymentOption {
+  @apply w-full flex items-center gap-3 p-3 rounded-xl border border-gray-200 bg-white text-left transition-all hover:border-brand-400 cursor-pointer;
+}
+.paymentOptionActive {
+  @apply border-brand-500 bg-brand-50;
+}
+.paymentOptionRadio {
+  @apply w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0;
+  .paymentOptionActive & {
+    @apply border-brand-500;
+  }
+}
+.paymentOptionDot {
+  @apply w-2.5 h-2.5 rounded-full bg-brand-500;
 }
 .paymentLabel {
   @apply text-sm font-medium text-gray-700;
 }
 .paymentSub {
   @apply text-xs text-gray-400;
+}
+.stripeBadge {
+  @apply ml-auto text-xs font-bold text-brand-600 bg-brand-100 px-2 py-0.5 rounded-full flex-shrink-0;
+}
+.cardInputWrapper {
+  @apply mt-4 p-4 rounded-xl border border-gray-200 bg-gray-50;
+}
+.testCardHint {
+  @apply mt-3 text-xs text-gray-400;
 }
 
 .placeOrderBtn {

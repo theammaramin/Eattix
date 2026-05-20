@@ -1,9 +1,13 @@
 import uuid
+import stripe
+from django.conf import settings
 from django.db.models import Q
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Import all the models and serializers
 from .models import User, Event, Stall, MenuItem, Order
@@ -179,3 +183,20 @@ class OrderViewSet(viewsets.ModelViewSet):
             order.save()
         serializer = self.get_serializer(order)
         return Response(serializer.data)
+
+
+class CreatePaymentIntentView(APIView):
+    def post(self, request):
+        amount = request.data.get('amount')
+        if not amount:
+            return Response({'error': 'Amount is required'}, status=400)
+        try:
+            # amount must be in cents (paise for INR), e.g. £10.00 → 1000
+            intent = stripe.PaymentIntent.create(
+                amount=int(float(amount) * 100),
+                currency='gbp',
+                automatic_payment_methods={'enabled': True},
+            )
+            return Response({'clientSecret': intent.client_secret})
+        except stripe.error.StripeError as e:
+            return Response({'error': str(e)}, status=400)

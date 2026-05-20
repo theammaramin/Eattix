@@ -81,6 +81,7 @@ class Order(models.Model):
     pickup_code = models.CharField(max_length=10, blank=True, null=True)
     estimated_time = models.CharField(max_length=50, blank=True, null=True)
     note = models.TextField(blank=True, null=True)
+    payment_method = models.CharField(max_length=20, default='pay_at_stall')
     placed_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

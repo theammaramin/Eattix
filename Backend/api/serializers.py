@@ -100,13 +100,14 @@ class OrderSerializer(serializers.ModelSerializer):
     estimatedTime = serializers.CharField(source='estimated_time', read_only=True)
     placedAt = serializers.DateTimeField(source='placed_at', read_only=True)
     updatedAt = serializers.DateTimeField(source='updated_at', read_only=True)
+    paymentMethod = serializers.CharField(source='payment_method', required=False)
 
     class Meta:
         model = Order
         fields = [
-            'id', 'customerId', 'stallId', 'eventId', 'total', 
-            'status', 'pickupCode', 'estimatedTime', 'note', 
-            'placedAt', 'updatedAt', 'items'
+            'id', 'customerId', 'stallId', 'eventId', 'total',
+            'status', 'pickupCode', 'estimatedTime', 'note',
+            'paymentMethod', 'placedAt', 'updatedAt', 'items'
         ]
 
     def create(self, validated_data):
